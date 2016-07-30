@@ -23,6 +23,16 @@ class WeixinController extends Controller
 			switch ($message->MsgType) {
 				case 'text':
 					return self::getTextResp();
+				case 'image':
+					return self::getImageResp()；
+				case 'voice':
+					return self::getVoiceResp();
+				case 'video':
+					return self::getVideoResp();
+				case 'location':
+					return self::getLocationResp();
+				case 'link':
+					return self::getLinkResp();
 				default:
 					break;
 			}
@@ -39,5 +49,25 @@ class WeixinController extends Controller
 
 	public function getTextResp() {
 		return "这是文本！";
+	}
+	
+	public function getImageResp() {
+		return "这是图片！";
+	}
+	
+	public function getVoiceResp() {
+		return "这是语音！";
+	}
+	
+	public function getVideoResp() {
+		return "这是视频！";
+	}
+	
+	public function getLocationResp() {
+		return "这是坐标！";
+	}
+	
+	public function getLinkResp() {
+		return "这是链接！";
 	}
 }
