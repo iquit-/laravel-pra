@@ -14,7 +14,7 @@ class WeixinController extends Controller
 
         $wechat = app('wechat');
         $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 haha222 overtrue！";
+            return "欢迎关注 毛毛！！";
         });
 
         Log::info('return response.');
