@@ -14,12 +14,27 @@ class WeixinController extends Controller
 
         $wechat = app('wechat');
         $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 毛毛11222！！";
+            switch ($message->Event) {
+				case 'subscribe':
+					return self::getSubscribeResp();
+				case 'text':
+					return self::getTextResp();
+				default:
+					# code...
+					break;
+        }
         });
 
         Log::info('return response.');
 
         return $wechat->server->serve();
     }
+	
+	public function getSubscribeResp($message) {
+		return "欢迎关注！我们将会持续推送房价信息与变化趋势！嘻嘻！";
+	}
 
+	public function getTextResp($message) {
+		return "这是文本！";
+	}
 }
