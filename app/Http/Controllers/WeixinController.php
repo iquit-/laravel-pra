@@ -17,12 +17,17 @@ class WeixinController extends Controller
             switch ($message->Event) {
 				case 'subscribe':
 					return self::getSubscribeResp();
+				default:
+					# code...
+					break;
+			}
+			switch ($message->MsgType) {
 				case 'text':
 					return self::getTextResp();
 				default:
 					# code...
 					break;
-        }
+			}
         });
 
         Log::info('return response.');
