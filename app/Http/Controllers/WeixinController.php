@@ -18,14 +18,12 @@ class WeixinController extends Controller
 				case 'subscribe':
 					return self::getSubscribeResp();
 				default:
-					# code...
 					break;
 			}
 			switch ($message->MsgType) {
 				case 'text':
 					return self::getTextResp();
 				default:
-					# code...
 					break;
 			}
         });
@@ -35,11 +33,11 @@ class WeixinController extends Controller
         return $wechat->server->serve();
     }
 	
-	public function getSubscribeResp($message) {
+	public function getSubscribeResp() {
 		return "欢迎关注！我们将会持续推送房价信息与变化趋势！嘻嘻！";
 	}
 
-	public function getTextResp($message) {
+	public function getTextResp() {
 		return "这是文本！";
 	}
 }
