@@ -26,9 +26,9 @@ class WeixinController extends Controller
 				case 'image':
 					return self::getImageResp();
 				case 'voice':
-					return self::getVoiceResp();
+					return self::getVoiceResp($message);
 				case 'video':
-					return self::getVideoResp($message);
+					return self::getVideoResp();
 				case 'location':
 					return self::getLocationResp();
 				case 'link':
