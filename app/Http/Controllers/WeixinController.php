@@ -73,6 +73,37 @@ class WeixinController extends Controller
 		echo "userList 接口调用结束";
 	}
 	
+	public function addMenus() {
+		$buttons = [
+			[
+				"type" => "click",
+				"name" => "周围笋盘",
+				"key"  => "V1001_NEAR_BUILDING"
+			],
+			[
+				"name"       => "菜单",
+				"sub_button" => [
+					[
+						"type" => "view",
+						"name" => "搜索",
+						"url"  => "http://www.soso.com/"
+					],
+					[
+						"type" => "view",
+						"name" => "视频",
+						"url"  => "http://v.qq.com/"
+					],
+					[
+						"type" => "click",
+						"name" => "赞一下我们",
+						"key" => "V1001_GOOD"
+					],
+				],
+			],
+		];
+		$menu->add($buttons);
+	}
+	
 	public function getSubscribeResp() {
 		return "欢迎关注！我们将会持续推送房价信息与变化趋势！嘻嘻！";
 	}

@@ -23,4 +23,6 @@ Route::any('/wechat/user', 'WeixinController@user');
 
 Route::any('/wechat/userList', 'WeixinController@userList');
 
+Route::any('/wechat/addMenus', 'WeixinController@addMenus');
+
 //Route::get('weixin/{id}', 'WeixinController@show');
