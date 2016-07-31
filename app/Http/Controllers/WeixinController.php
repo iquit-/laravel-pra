@@ -55,12 +55,22 @@ class WeixinController extends Controller
 	
 	public function user() {
 		$wechat = app('wechat');
-		echo "userService 接口开始调用";
+		echo "user 接口开始调用";
 		echo "<hr />";
 		$user = $wechat->user->get("o9k8Qv2f9-_kl0lpuaMxcjAxppk0");
 		var_dump($user);
 		echo "<hr />";
-		echo "userService 接口调用结束";
+		echo "user 接口调用结束";
+	}
+	
+	public function userList() {
+		$wechat = app('wechat');
+		echo "userList 接口开始调用";
+		echo "<hr />";
+		$userList = $wechat->user->lists();
+		var_dump($userList);
+		echo "<hr />";
+		echo "userList 接口调用结束";
 	}
 	
 	public function getSubscribeResp() {

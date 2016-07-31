@@ -21,4 +21,6 @@ Route::any('/wechat/broadcast', 'WeixinController@broadcast');
 
 Route::any('/wechat/user', 'WeixinController@user');
 
+Route::any('/wechat/userList', 'WeixinController@userList');
+
 //Route::get('weixin/{id}', 'WeixinController@show');
