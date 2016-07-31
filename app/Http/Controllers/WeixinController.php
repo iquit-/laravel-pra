@@ -53,6 +53,16 @@ class WeixinController extends Controller
 		echo "previewText 接口调用结束";
 	}
 	
+	public function user() {
+		$wechat = app('wechat');
+		echo "userService 接口开始调用";
+		echo "<hr />";
+		$user = $wechat->user->get("o9k8Qv2f9-_kl0lpuaMxcjAxppk0");
+		var_dump($user);
+		echo "<hr />";
+		echo "userService 接口调用结束";
+	}
+	
 	public function getSubscribeResp() {
 		return "欢迎关注！我们将会持续推送房价信息与变化趋势！嘻嘻！";
 	}
