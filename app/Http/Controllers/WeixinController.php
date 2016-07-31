@@ -28,7 +28,7 @@ class WeixinController extends Controller
 				case 'voice':
 					return self::getVoiceResp();
 				case 'video':
-					return self::getVideoResp();
+					return self::getVideoResp($message);
 				case 'location':
 					return self::getLocationResp();
 				case 'link':
@@ -123,8 +123,8 @@ class WeixinController extends Controller
 		return "这是图片！";
 	}
 	
-	public function getVoiceResp() {
-		return "这是语音！";
+	public function getVoiceResp($message) {
+		return $message->Recongnition;
 	}
 	
 	public function getVideoResp() {
