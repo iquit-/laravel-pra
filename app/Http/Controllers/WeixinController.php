@@ -105,7 +105,8 @@ class WeixinController extends Controller
 				],
 			],
 		];
-		$menu->add($buttons);
+		$result = $menu->add($buttons);
+		var_dump($result);
 		echo "<hr />";
 		echo "addMenus 接口调用结束";
 	}
