@@ -124,7 +124,7 @@ class WeixinController extends Controller
 	}
 	
 	public function getVoiceResp($message) {
-		return "你说的是".var_dump($message)."吗？";
+		return "你说的是".$message->MsgType."吗？".$message->Recongnition;
 	}
 	
 	public function getVideoResp() {
