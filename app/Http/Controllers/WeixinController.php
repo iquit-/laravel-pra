@@ -74,6 +74,10 @@ class WeixinController extends Controller
 	}
 	
 	public function addMenus() {
+		$wechat = app('wechat');
+		$menu = $wechat->menu;
+		echo "addMenus 接口开始调用";
+		echo "<hr />";
 		$buttons = [
 			[
 				"type" => "click",
@@ -102,6 +106,8 @@ class WeixinController extends Controller
 			],
 		];
 		$menu->add($buttons);
+		echo "<hr />";
+		echo "addMenus 接口调用结束";
 	}
 	
 	public function getSubscribeResp() {
