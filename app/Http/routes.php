@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::any('/wechat', 'WeixinController@serve');
 
+Route::any('/wechat/broadcast', 'WeixinController@broadcast');
+
 //Route::get('weixin/{id}', 'WeixinController@show');

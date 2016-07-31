@@ -43,6 +43,11 @@ class WeixinController extends Controller
         return $wechat->server->serve();
     }
 	
+	public function broadcast() {
+		$wechat = app('wechat');
+		$wechat->->broadcast->->sendText("大家好！欢迎使用 EasyWeChat。");
+	}
+	
 	public function getSubscribeResp() {
 		return "欢迎关注！我们将会持续推送房价信息与变化趋势！嘻嘻！";
 	}
