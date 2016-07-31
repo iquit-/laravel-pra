@@ -45,7 +45,10 @@ class WeixinController extends Controller
 	
 	public function broadcast() {
 		$wechat = app('wechat');
-		$wechat->broadcast->sendText("大家好！欢迎使用 EasyWeChat。");
+		echo "previewText 接口开始调用";
+		$res = $wechat->broadcast->previewText("大家好！欢迎使用 EasyWeChat。","o9k8Qv2f9-_kl0lpuaMxcjAxppk0");
+		var_dump($res);
+		echo "previewText 接口调用结束";
 	}
 	
 	public function getSubscribeResp() {
